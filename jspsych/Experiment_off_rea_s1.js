@@ -38,7 +38,7 @@ var welcome = {
   "<p class='instructions'>Quels sont les bénéfices d'y participer ?" +
   "<br>Les participant·es étudiant à l'université de Fribourg seront compensé·es avec 30 points d'expérience pour la participation à cette étude.</p>" +
   "<p class='instructions'>Quels sont les risques d'y participer ?" +
-  "<br>Il n'y a pas de risques directs. Votre participation implique un investissement de XX minutes de votre temps.</p>" +
+  "<br>Il n'y a pas de risques directs. Votre participation implique un investissement de 15 minutes de votre temps.</p>" +
   "<p class='instructions'>Vos droits si vous participez à l'étude :" +
   "<br> Vous êtes libre d'accepter ou de refuser de participer à l'étude. Si vous décidez de ne pas y prendre part, cela n'aura aucune conséquence. " +
   "De plus, vous pouvez décider de vous retirer à n'importe quel moment.</p>" +
