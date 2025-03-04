@@ -36,9 +36,9 @@ var welcome = {
   "<br>Si vous décidez de participer à l'étude, vous allez compléter des questionnaires sur différents sujets. " +
   "Il est important que vous passiez l'étude en une fois et que vous ne fassiez pas de recherches sur Internet.</p>" +
   "<p class='instructions'>Quels sont les bénéfices d'y participer ?" +
-  "<br>Les participant·es étudiant à l'université de Fribourg seront compensé·es avec 30 points d'expérience pour la participation à cette étude.</p>" +
+  "<br>Les participant·es seront récompensé·es avec 1 point bonus pour la participation à cette étude.</p>" +
   "<p class='instructions'>Quels sont les risques d'y participer ?" +
-  "<br>Il n'y a pas de risques directs. Votre participation implique un investissement de 15 minutes de votre temps.</p>" +
+  "<br>Il n'y a pas de risques directs. Votre participation implique un investissement de 15-20 minutes de votre temps.</p>" +
   "<p class='instructions'>Vos droits si vous participez à l'étude :" +
   "<br> Vous êtes libre d'accepter ou de refuser de participer à l'étude. Si vous décidez de ne pas y prendre part, cela n'aura aucune conséquence. " +
   "De plus, vous pouvez décider de vous retirer à n'importe quel moment.</p>" +
@@ -454,7 +454,7 @@ var mcmq_questionnaire = {
   "<p class='instructions_questionnaire'>Il n'y a pas de bonne réponse, nous sommes intéressés par vos opinions personnelles.</p>",
   questions: [
        {prompt: "Certaines choses importantes dont le grand public n'est pas informé se produisent parfois dans le monde.", name: 'mcmq_1', labels: labels, required: true},
-       {prompt: "Les politiciens ne nous disent parfois pas ce qui motive réellement leurs décisions.", name: 'mcmq_2', labels: labels, required: true},
+       {prompt: "Les politiciens ne nous disent pas toujours ce qui motive réellement leurs décisions.", name: 'mcmq_2', labels: labels, required: true},
        {prompt: "Les agences gouvernementales surveillent étroitement certains citoyens.", name: 'mcmq_3', labels: labels, required: true},
        {prompt: "Des événements qui, en apparence, ne semblent pas avoir de lien peuvent être le résultat d'activités secrètes.", name: 'mcmq_4', labels: labels, required: true},
        {prompt: "Il existe des organisations secrètes qui influencent parfois les décisions politiques.", name: 'mcmq_5', labels: labels, required: true},  
@@ -631,17 +631,22 @@ var waiting_demand = {
 }
 
 var thanks = {
-  type: jsPsychHtmlKeyboardResponse,
+  type: jsPsychHtmlButtonResponse,
   stimulus:
   "<p class='instructions'>Vos données ont bien été enregistrées. " +
   "Merci beaucoup pour votre participation!"+
   "<p class='instructions'>Si vous souhaitez poser des questions ou demander des précisions, vous pouvez à tout moment contacter les personnes suivantes:" +
   "<br>Ana Rita Fangueiro Pires (ana.fangueiropires@unifr.ch)" +
   "<br>Pascal Wagner-Egger (pascal.wagner@unifr.ch)" +
-  "<br>Département de psychologie, Université de Fribourg</p>",
-  choices: "NO_KEYS"
+  "<br>Département de psychologie, Université de Fribourg</p>" +
+  "<p class='instructions'>Après avoir cliquer sur continuer, vous allez être redirigé sur une page contenant le code que vous devrez copier-coller dans la section dediée sur l'espace-cours Cursus.</p>",
+  choices: ['Continuer'],
+  on_finish: function(){
+  window.location.href = "https://uikuik.info/codeR2.php";
+  }
 }
-          
+
+    
 //Save data ---------------------------------------------------------------------------------
 const subject_id = jsPsych.randomization.randomID(10);
 const filename = `${subject_id}.csv`;
