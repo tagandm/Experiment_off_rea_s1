@@ -641,7 +641,7 @@ var prolific = {
   "<p class='instructions'>Après avoir cliquer sur continuer, vous allez être redirigé sur prolific.</p>",
   choices: ['Continuer'],
   on_finish: function(){
-  window.location.href = "https://app.prolific.com/submissions/complete?cc=C1FUFO8M";
+  window.location.href = "https://app.prolific.com/submissions/complete?cc=C8AXO7ZV";
   }
 }
 
