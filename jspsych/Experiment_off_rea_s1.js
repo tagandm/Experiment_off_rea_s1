@@ -35,8 +35,6 @@ var welcome = {
   "<p class='instructions'>Qu'est-ce que nous vous demandons de faire ?" +
   "<br>Si vous décidez de participer à l'étude, vous allez compléter des questionnaires sur différents sujets. " +
   "Il est important que vous passiez l'étude en une fois et que vous ne fassiez pas de recherches sur Internet.</p>" +
-  "<p class='instructions'>Quels sont les bénéfices d'y participer ?" +
-  "<br>Les participant·es seront récompensé·es avec 1 point bonus pour la participation à cette étude.</p>" +
   "<p class='instructions'>Quels sont les risques d'y participer ?" +
   "<br>Il n'y a pas de risques directs. Votre participation implique un investissement de 15-20 minutes de votre temps.</p>" +
   "<p class='instructions'>Vos droits si vous participez à l'étude :" +
@@ -626,11 +624,12 @@ var waiting_demand = {
   stimulus:
   "<p class='instructions'>Vous avez maintenant fini de répondre à l'ensemble des questions. " +
   "Après avoir cliquer sur continuer, les données vont être sauvegardées pendant le chargement. " +
-  "Veuillez, s'il vous plait, attendre la prochaine page pour quitter.</p>",
+  "Veuillez patienter jusqu'à ce que la prochaine page apparaisse. " +
+  "Sinon, nous n'aurons aucune preuve que vous avez complété l'étude.</p>",
   choices: ['Continuer']
 }
 
-var thanks = {
+var prolific = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
   "<p class='instructions'>Vos données ont bien été enregistrées. " +
@@ -639,14 +638,17 @@ var thanks = {
   "<br>Ana Rita Fangueiro Pires (ana.fangueiropires@unifr.ch)" +
   "<br>Pascal Wagner-Egger (pascal.wagner@unifr.ch)" +
   "<br>Département de psychologie, Université de Fribourg</p>" +
-  "<p class='instructions'>Après avoir cliquer sur continuer, vous allez être redirigé sur une page contenant le code que vous devrez copier-coller dans la section dediée sur l'espace-cours Cursus.</p>",
+  "<p class='instructions'>Après avoir cliquer sur continuer, vous allez être redirigé sur prolific.</p>",
   choices: ['Continuer'],
   on_finish: function(){
-  window.location.href = "https://uikuik.info/codeR2.php";
+  window.location.href = "https://app.prolific.com/submissions/complete?cc=C1FUFO8M";
   }
 }
 
-    
+var prolific_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+var session_id = jsPsych.data.getURLVariable('SESSION_ID');
+ 
 //Save data ---------------------------------------------------------------------------------
 const subject_id = jsPsych.randomization.randomID(10);
 const filename = `${subject_id}.csv`;
@@ -654,6 +656,9 @@ const experiment_id = "IfQZnkKwQ7wG";
 
 jsPsych.data.addProperties({
   subject_id: subject_id,
+  prolific_id: prolific_id,
+  study_id: study_id,
+  session_id: session_id,
   cmq_or_mcmq: cmq_or_mcmq_randomization,
   task_or_questionnaires_first: task_or_questionnaires_first_randomization,
   true_side: true_side
@@ -679,7 +684,7 @@ timeline.push
   comment,
   waiting_demand,
   save_data,
-  thanks
+  prolific
   )
 
 jsPsych.run(timeline)
