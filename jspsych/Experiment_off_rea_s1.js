@@ -31,7 +31,7 @@ var welcome = {
   stimulus:
   "<p class='instructions'>Chères participantes et participants,</p>" +
   "<p class='instructions'>Nous vous demandons de participer à notre étude qui s'intéresse à vos opinions sur divers sujets. " +
-  "Veuillez s'il vous plaît lire la présentation de l'étude ainsi que les risques et bénéfices qu'elle peut présenter avant de décider d'y participer.</p>" +
+  "Veuillez s'il vous plaît lire la présentation de l'étude ainsi que les risques qu'elle peut présenter avant de décider d'y participer.</p>" +
   "<p class='instructions'>Qu'est-ce que nous vous demandons de faire ?" +
   "<br>Si vous décidez de participer à l'étude, vous allez compléter des questionnaires sur différents sujets. " +
   "Il est important que vous passiez l'étude en une fois et que vous ne fassiez pas de recherches sur Internet.</p>" +
