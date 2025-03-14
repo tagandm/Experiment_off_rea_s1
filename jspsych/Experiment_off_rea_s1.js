@@ -595,7 +595,7 @@ var search_check = {
   questions: [
     {
       prompt: "<p class='instructions_questionnaire'>Avez-vous effectué des recherches sur internet pendant la tâche ?</p>" +
-      "<p class='instructions_questionnaire'>Veuillez répondre honnêtement à cette question, nous vous assurons que votre réponse n'aura pas d'impact sur votre crédit.</p>", 
+      "<p class='instructions_questionnaire'>Veuillez répondre honnêtement à cette question, nous vous assurons que votre réponse n'aura pas d'impact sur votre rémunération.</p>", 
       options: ["oui", "non"],
       name: 'research_check',
       required: true,
